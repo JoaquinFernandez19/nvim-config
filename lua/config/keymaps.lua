@@ -4,3 +4,4 @@
 
 
 vim.keymap.set("i", "<C-c>", "<esc>", {desc = "Exited insert mode"})
+vim.keymap.set("n", "<leader>e",":lua MiniFiles.open()<cr>",{desc = "Open mini files"})

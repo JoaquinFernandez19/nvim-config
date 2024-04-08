@@ -1,8 +1,9 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("mini.files").setup()
 --require("cattpucin").setup({
 --  transparent_background = false,
 --})
+--
 
 vim.cmd.colorscheme("kanagawa")
 
