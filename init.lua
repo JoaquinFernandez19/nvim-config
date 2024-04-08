@@ -1,5 +1,6 @@
 require("config.lazy")
 require("mini.files").setup()
+require("Comment").setup()
 --require("cattpucin").setup({
 --  transparent_background = false,
 --})
