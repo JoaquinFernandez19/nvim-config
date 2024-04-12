@@ -7,3 +7,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "EslintFixAll",
   group = vim.api.nvim_create_augroup("MyAutocmdsJavaScripFormatting", {}),
 })
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "*.rs" },
+  command = "!cargo fmt",
+  group = vim.api.nvim_create_augroup("AutoCmdRust", {}),
+})
