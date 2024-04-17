@@ -10,6 +10,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "*.rs" },
-  command = "!cargo fmt --quiet",
+  command = ":sil! !cargo fmt --quiet",
   group = vim.api.nvim_create_augroup("AutoCmdRust", {}),
 })
