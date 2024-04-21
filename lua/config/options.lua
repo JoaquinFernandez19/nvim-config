@@ -4,4 +4,4 @@
 --
 --
 vim.g.autoformat = false
---vim.opt.expandtab = false //TODO: Enable only in GDScript
+vim.opt.expandtab = false 
