@@ -5,3 +5,4 @@ vim.cmd.colorscheme("catppuccin")
 require("lspconfig").gdscript.setup { cmd = { "ncat", "localhost", "6008" } }
 
 
+
