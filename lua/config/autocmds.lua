@@ -8,21 +8,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = vim.api.nvim_create_augroup("MyAutocmdsJavaScripFormatting", {}),
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = vim.api.nvim_create_augroup("TS_add_missing_imports", { clear = true,  }),
-  desc = "TS_add_missing_imports",
-  pattern = { "*.ts", "*.tsx" },
-  callback = function()
-    vim.lsp.buf.code_action({
-      apply = true,
-      context = {
-        only = { "source.addMissingImports.ts" },
-      },
-    })
-    vim.cmd("write")
-  end,
-})
-
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "*.rs" },
   command = ":sil! !cargo fmt --quiet",
@@ -32,3 +17,23 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_command([[
   autocmd FileType gdscript setlocal commentstring=#\ %s
 ]])
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "lua" },
+  callback = function()
+    vim.b.autoformat = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "*.ts", "*.tsx" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      apply = true,
+      context = {
+        only = { "source.addMissingImports.ts" },
+        diagnostics = {},
+      },
+    })
+  end,
+})
