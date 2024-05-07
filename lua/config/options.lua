@@ -3,3 +3,5 @@
 -- Add any additional options here
 vim.g.autoformat = false
 vim.opt.expandtab = false
+vim.o.title = true
+vim.o.titlestring = "%{expand('%:p')}"

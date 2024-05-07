@@ -1,7 +1,7 @@
 return {
- {
-    'echasnovski/mini.files',
-    name = 'mini.files',
-    version = '*'
-  }
+  {
+    "echasnovski/mini.files",
+    name = "mini.files",
+    version = "*",
+  },
 }
